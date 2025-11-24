@@ -15,6 +15,8 @@ spec:
       containers:
         - image: mongo:7.0.26-jammy
           name: mongo
+          command: ["mongod"]
+          args: ["--auth"]
           ports:
             - containerPort: 27017
           env:
