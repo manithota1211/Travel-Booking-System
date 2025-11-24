@@ -21,5 +21,20 @@ spec:
             - name: FRONTEND_URL
               value: "http://app1-frontend:80"
             - name: MONGODB_URI
-              value: "mongodb://mongo-service:27017/travelEas"
+              value: "mongodb://travel-ease-mongo:27017/travelEas"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: travel-booking-service
+spec:
+  type: LoadBalancer
+  selector:
+    web: app
+  ports:
+    - protocol: TCP
+      port: 4000         
+      targetPort: 4000 
+
 
