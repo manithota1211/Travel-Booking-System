@@ -21,7 +21,7 @@ spec:
             - name: FRONTEND_URL
               value: "http://app1-frontend:80"
             - name: MONGODB_URI
-              value: "mongodb://travel-ease-mongo:27017/travelEas"
+              value: "mongodb://mongo:27017/travelEas"
 
 ---
 apiVersion: v1
