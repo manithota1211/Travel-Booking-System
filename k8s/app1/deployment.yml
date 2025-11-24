@@ -18,8 +18,6 @@ spec:
           ports:
             - containerPort: 4000
           env:
-            - name: FRONTEND_URL
-              value: "http://app1-frontend:80"
             - name: MONGODB_URI
               value: "mongodb://mongo:27017/travelEas"
 
