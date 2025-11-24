@@ -28,11 +28,11 @@ kind: Service
 metadata: 
   name: sujith-travel-service 
 spec:
+  type: LoadBalancer
   selector:
     web: app
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 3000
-  type: LoadBalancer
-  nodePort: 30002
+      port: 80         
+      targetPort: 3000 
+      nodePort: 30002
