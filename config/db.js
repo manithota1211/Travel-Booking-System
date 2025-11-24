@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async (retries = 5) => {
     try {
-        const mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/travelEas';
+        const mongoUri = process.env.MONGODB_URI || 'mongodb://mongo:27017/travelEas';
         
         // Enhanced MongoDB connection options for newer driver versions
         const connectionOptions = {
