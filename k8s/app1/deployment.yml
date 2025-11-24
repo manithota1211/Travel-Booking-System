@@ -11,7 +11,7 @@ spec:
   template:
     metadata: 
       labels:
-        web: app1
+        web: app
     spec:
       containers:
         - name: backend
@@ -20,7 +20,7 @@ spec:
             - containerPort: 4000
           env:
             - name: FRONTEND_URL
-              value: "http://app1-frontend:80"
+              value: "http://localhost:4000"
             - name: MONGODB_URI
               value: "mongodb://travel-ease-mongo:27017/travelEas"
 
@@ -31,9 +31,11 @@ metadata:
   name: travel-booking-service
 spec:
   selector:
-    web: app1
+    web: app
   ports:
     - protocol: TCP
       port: 80
       targetPort: 4000
   type: LoadBalancer
+  nodePort: 30001
+
