@@ -23,18 +23,5 @@ spec:
             - name: MONGODB_URI
               value: "mongodb://mongo:27017/travelEas"
 
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: travel-booking-service
-spec:
-  type: LoadBalancer
-  selector:
-    web: app
-  ports:
-    - protocol: TCP
-      port: 4000         
-      targetPort: 4000 
 
 

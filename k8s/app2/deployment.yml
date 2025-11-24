@@ -22,16 +22,3 @@ spec:
               value: "http://app2-frontend:80"
             - name: MONGODB_URI
               value: "mongodb://mongo:27017/eventdb"
----
-apiVersion: v1
-kind: Service
-metadata: 
-  name: sujith-travel-service 
-spec:
-  type: LoadBalancer
-  selector:
-    web: app
-  ports:
-    - protocol: TCP
-      port: 3000        
-      targetPort: 3000 
