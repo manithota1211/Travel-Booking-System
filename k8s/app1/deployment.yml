@@ -19,7 +19,9 @@ spec:
             - containerPort: 4000
           env:
             - name: MONGODB_URI
-              value: "mongodb://mongo-service:27017/travelEas"
+              value: "mongodb://admin:admin123@mongo-service:27017/travelEas?authSource=admin"
+
+
 
 
 
