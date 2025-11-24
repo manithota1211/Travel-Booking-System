@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: travel-booking
-
 spec:
   replicas: 3
   selector:
@@ -25,7 +24,7 @@ spec:
               value: "mongodb://travel-ease-mongo:27017/travelEas"
 
 ---
-aapiVersion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: travel-booking-service
