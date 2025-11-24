@@ -7,7 +7,7 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: travel-booking
+      web: app
   template:
     metadata: 
       labels:
