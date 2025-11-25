@@ -1,33 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-deployment
+  name: travel-deployment 
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: mongo
+      app: mani
   template:
     metadata:
       labels:
-        app: mongo
+        app: mani
     spec:
       containers:
-        - name: mongo-cont 
-          image: mongo:latest
+        - name: travel-container
+          image: manikanta1432/travel-booking-image:v1.1.0
+          imagePullPolicy: Always
           ports:
-            - containerPort: 27017
+            - containerPort: 4000
+          env:
+            - name: MONGODB_URI
+              value: "mongodb://mongo-svc:27017/travelEas"
 
 --- 
 
-apiVersion: v1
-kind: Service
-metadata:
-  name: mongo-svc
-spec:
-  type: ClusterIP
-  selector:
-    app: mongo
-  ports:
-    - port: 27017
-      targetPort: 27017
