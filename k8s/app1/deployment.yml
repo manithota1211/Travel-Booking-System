@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: travel-container
-          image: manikanta1432/travel-booking-image:v1.1.0
+          image: manikanta1432/travel-booking-image:v1.2.0
           imagePullPolicy: Always
           ports:
             - containerPort: 4000
