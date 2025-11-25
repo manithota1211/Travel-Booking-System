@@ -1,27 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: travel-booking
+  name: mongo-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      web: app
+      app: mongo
   template:
-    metadata: 
+    metadata:
       labels:
-        web: app
+        app: mongo
     spec:
       containers:
-        - name: backend
-          image: manikanta1432/travel-booking-image:v1.1.0
+        - name: mongo-cont 
+          image: mongo:latest
           ports:
-            - containerPort: 4000
-          env:
-            - name: MONGODB_URI
-              value: "mongodb://mongo-service:27017/travelEas"
+            - containerPort: 27017
 
+--- 
 
-
-
-
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-svc
+spec:
+  type: ClusterIP
+  selector:
+    app: mongo
+  ports:
+    - port: 27017
+      targetPort: 27017

@@ -1,22 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sujith-travel-app
+  name: sujith-deployment
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
-      web: app
+      app: mani
   template:
     metadata:
       labels:
-        web: app
+        app: mani
     spec:
       containers:
-        - name: backend
+        - name: sujitha-cont
           image: manikanta1432/sujith-project-image:v1.1.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
           env:
-            - name: MONGODB_URI
-              value: "mongodb://mongo-service:27017/eventdb"
+            - name: MONGO_URI
+              value: mongodb://mongo-svc:27017/sujitha
